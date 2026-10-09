@@ -1,0 +1,8 @@
+include:
+  - project: 'nhs/cicd-template'
+    ref: 'feat/cicd-centralized'
+    file: '/templates/main.gitlab-ci/Nodejs.gitlab-ci.yml'
+
+variables:
+  OCP_PROJECT: "app-nhs-retail-accounts" 
+  OCP_POD_NAMES: "nice-account-cms-fe"

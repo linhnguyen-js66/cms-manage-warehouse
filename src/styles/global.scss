@@ -1,0 +1,301 @@
+@import "./fonts.scss";
+@import "./loading.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@function toRGB($color) {
+  @return unquote(red($color) + " " + green($color) + " " + blue($color));
+}
+
+@layer base {
+  :root {
+    font-family: 'Roboto', sans-serif;
+    --text-primary: #{toRGB(#313442)};
+
+    --primary-50: #{toRGB(#FFF7DF)};
+    --primary-100: #{toRGB(#FFEAAF)};
+    --primary-200: #{toRGB(#FFEAAF)};
+    --primary-300: #{toRGB(#FFEAAF)};
+    --primary-500: #{toRGB(#FFC709)};
+    --primary-600: #{toRGB(#F0AF08)};
+    --primary-700: #{toRGB(#DB850D)};
+    --primary-800: #{toRGB(#BE6500)};
+    --primary-900: #{toRGB(#13c2c2)};
+
+    --secondary: #{toRGB(#82869E)};
+    --secondary-50: #{toRGB(#E6F1F8)};
+    --secondary-100: #{toRGB(#D9EAF5)};
+    --secondary-200: #{toRGB(#B3D5EB)};
+    --secondary-300: #{toRGB(#99C7E4)};
+    --secondary-500: #{toRGB(#0072BC)};
+    --secondary-600: #{toRGB(#0061A0)};
+    --secondary-700: #{toRGB(#005084)};
+    --secondary-800: #{toRGB(#004471)};
+
+    --gradient-priority-start: #{toRGB(#FCDFAA)};
+    --gradient-priority-end: #{toRGB(#F9C461)};
+    --gradient-primary-start: #{toRGB(#31AEFF)};
+    --gradient-primary-end: #{toRGB(#006DB4)};
+    --gradient-secondary-start: #{toRGB(#FFE609)};
+    --gradient-secondary-end: #{toRGB(#FFA800)};
+    --gradient-100-start: #{toRGB(#FFD143)};
+    --gradient-100-middle: #{toRGB(#FFF2CC)};
+    --gradient-100-end: #{toRGB(#FFFFFF)};
+    --gradient-200-start: #{toRGB(#FFFFFF)};
+    --gradient-200-middle: #{toRGB(#FFF7DD)};
+    --gradient-200-end: #{toRGB(#FFFBF0)};
+
+    --link-50: #{toRGB(#ebf5ff)};
+    --link-100: #{toRGB(#ebf5ff)};
+    --link-200: #{toRGB(#c4e2fe)};
+    --link-300: #{toRGB(#a6d3fe)};
+    --link-500: #{toRGB(#3a9efc)};
+    --link-600: #{toRGB(#3186d6)};
+    --link-700: #{toRGB(#296FB0)};
+    --link-800: #{toRGB(#235f97)};
+
+    --success-50: #{toRGB(#e9f8ed)};
+    --success-100: #{toRGB(#ddf5e4)};
+    --success-200: #{toRGB(#bcebca)};
+    --success-300: #{toRGB(#a5e4b8)};
+    --success-500: #{toRGB(#1EBB4D)};
+    --success-600: #{toRGB(#1A9F41)};
+    --success-700: #{toRGB(#158336)};
+    --success-800: #{toRGB(#12702e)};
+
+    --pending-50: #{toRGB(#FFF5E9)};
+    --pending-100: #{toRGB(#FFF0DD)};
+    --pending-200: #{toRGB(#FFE0BC)};
+    --pending-300: #{toRGB(#FFD6A5)};
+    --pending-500: #{toRGB(#FF991F)};
+    --pending-600: #{toRGB(#D9821A)};
+    --pending-700: #{toRGB(#B36B16)};
+    --pending-800: #{toRGB(#995C13)};
+
+    --error-50: #{toRGB(#fcebeb)};
+    --error-100: #{toRGB(#fbe1e1)};
+    --error-200: #{toRGB(#f7c2c2)};
+    --error-300: #{toRGB(#f4aeae)};
+    --error-500: #{toRGB(#E43434)};
+    --error-600: #{toRGB(#c22c2c)};
+    --error-700: #{toRGB(#a02424)};
+    --error-800: #{toRGB(#891f1f)};
+
+    --color-50: #{toRGB(#FFFFFF)}; 
+    --color-100: #{toRGB(#F8F8FC)}; 
+    --color-200: #{toRGB(#F3F3F7)}; 
+    --color-300: #{toRGB(#E4E5F0)}; 
+    --color-400: #{toRGB(#DCDEE9)}; 
+    --color-500: #{toRGB(#BCBFD6)}; 
+    --color-600: #{toRGB(#A7ABC3)}; 
+    --color-700: #{toRGB(#82869E)}; 
+    --color-800: #{toRGB(#313442)}; 
+    --color-900: #{toRGB(#1B1D29)}; 
+    --color-black: #{toRGB(#000000)};
+    --color-bg: #{toRGB(#f0f2f5)};
+    
+
+    --blur_modal: #{toRGB(#4A4A4C)};
+
+    --common-0: #{toRGB(#1B1D29)}; 
+    --common-500: #{toRGB(#6f6f6f)};
+    --common-1000: #{toRGB(#FFFFFF)}; 
+
+    --transaction-start: #{toRGB(#FFFFFF)};
+    --transaction-middle: #{toRGB(#FFF2CC)};
+    --transaction-end: #{toRGB(#FFF7DF)};
+
+    --background_image: #{toRGB(#F6F6F6)};
+
+    --skeleton-background: #{toRGB(#F3F3F7)};
+    --skeleton-highlight: #{toRGB(#FFFFFF)};
+  }
+}
+
+/* init preset className */
+body .h1 {
+  font-size: theme('fontSize.48');
+  line-height: theme('lineHeight.64');
+  font-weight: theme('fontWeight.semibold');
+}
+
+body .h2 {
+  font-size: theme('fontSize.40');
+  line-height: theme('lineHeight.56');
+  font-weight: theme('fontWeight.extrabold');
+}
+
+body .h2-semibold {
+  font-size: theme('fontSize.40');
+  line-height: theme('lineHeight.56');
+  font-weight: theme('fontWeight.semibold');
+}
+
+body .h3 {
+  font-size: theme('fontSize.32');
+  line-height: theme('lineHeight.40');
+  font-weight: theme('fontWeight.semibold');
+}
+
+body .h3 {
+  font-size: theme('fontSize.32');
+  line-height: theme('lineHeight.40');
+  font-weight: theme('fontWeight.semibold');
+}
+
+body .h4 {
+  font-size: theme('fontSize.28');
+  line-height: theme('lineHeight.36');
+  font-weight: theme('fontWeight.semibold');
+}
+
+body .title1 {
+  font-size: theme('fontSize.24');
+  line-height: theme('lineHeight.32');
+  font-weight: theme('fontWeight.extrabold');
+}
+
+body .title1-bold {
+  font-size: theme('fontSize.24');
+  line-height: theme('lineHeight.32');
+  font-weight: theme('fontWeight.bold');
+}
+
+body .title2 {
+  font-size: theme('fontSize.24');
+  line-height: theme('lineHeight.36');
+  font-weight: theme('fontWeight.semibold');
+}
+
+body .title3 {
+  font-size: theme('fontSize.20');
+  line-height: theme('lineHeight.28');
+  font-weight: theme('fontWeight.extrabold');
+}
+
+body .title3-bold {
+  font-size: theme('fontSize.20');
+  line-height: theme('lineHeight.28');
+  font-weight: theme('fontWeight.bold');
+}
+
+body .title4 {
+  font-size: theme('fontSize.18');
+  line-height: theme('lineHeight.24');
+  font-weight: theme('fontWeight.bold');
+}
+
+body .title5 {
+  font-size: theme('fontSize.18');
+  line-height: theme('lineHeight.24');
+  font-weight: theme('fontWeight.semibold');
+  
+}
+
+body .sub-title1 {
+  font-size: theme('fontSize.15');
+  line-height: theme('lineHeight.24');
+  font-weight: theme('fontWeight.bold');
+  
+}
+
+body .sub-title2 {
+  font-size: theme('fontSize.15');
+  line-height: theme('lineHeight.24');
+  font-weight: theme('fontWeight.semibold');
+  
+}
+
+body .sub-title3 {
+  font-size: theme('fontSize.13');
+  line-height: theme('lineHeight.24');
+  font-weight: theme('fontWeight.bold');
+  
+}
+
+body .sub-title4 {
+  font-size: theme('fontSize.13');
+  line-height: theme('lineHeight.24');
+  font-weight: theme('fontWeight.semibold');
+  
+}
+
+body .body1 {
+  font-size: theme('fontSize.13');
+  line-height: theme('lineHeight.20');
+  font-weight: theme('fontWeight.normal');
+  
+}
+
+body .body2 {
+  font-size: theme('fontSize.13');
+  line-height: theme('lineHeight.20');
+  font-weight: theme('fontWeight.semibold');
+  
+}
+
+body .body3 {
+  font-size: theme('fontSize.15');
+  line-height: theme('lineHeight.20');
+  font-weight: theme('fontWeight.normal');
+  
+}
+
+body .caption1 {
+  font-size: theme('fontSize.12');
+  line-height: theme('lineHeight.16');
+  font-weight: theme('fontWeight.semibold');
+  
+}
+
+body .caption2 {
+  font-size: theme('fontSize.12');
+  line-height: theme('lineHeight.16');
+  font-weight: theme('fontWeight.normal');
+  
+}
+
+body .caption3 {
+  font-size: theme('fontSize.10');
+  line-height: theme('lineHeight.16');
+  text-transform: uppercase;
+  font-weight: theme('fontWeight.medium');
+  
+}
+
+body .caption3-medium  {
+  font-size: theme('fontSize.10');
+  line-height: theme('lineHeight.16');
+  font-weight: theme('fontWeight.normal');
+}
+
+body .h3-bold {
+  font-size: theme('fontSize.32');
+  line-height: theme('lineHeight.40');
+  font-weight: theme('fontWeight.bold');
+}
+
+
+body .body-2 {
+  font-size: theme('fontSize.14');
+  line-height: theme('lineHeight.20');
+  font-weight: theme('fontWeight.semibold');
+
+}
+
+body .body-regular{
+  font-size: theme('fontSize.14');
+  line-height: theme('lineHeight.20');
+  font-weight: theme('fontWeight.normal');
+}
+
+
+body .body-title{
+  font-size: theme('fontSize.22');
+  line-height: theme('lineHeight.24');
+  font-weight: theme('fontWeight.bold');
+}
+
+

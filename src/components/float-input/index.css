@@ -1,0 +1,44 @@
+.float-label {
+  position: relative;
+}
+
+.label {
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 12px;
+  top: 11px;
+  transition: 0.2s ease all;
+}
+
+.as-placeholder {
+  color: gray;
+}
+
+.as-label {
+  top: -8px;
+  font-size: 12px !important;
+  background: white;
+  padding: 0 4px;
+  margin-left: -4px;
+}
+
+.float-password-input input {
+  padding-right: 40px !important; /* chừa chỗ cho icon con mắt */
+}
+
+/* Đẩy label lên trên icon con mắt */
+.float-password .ant-input-affix-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cho label nằm trên wrapper của Input.Password */
+.float-label .label {
+  z-index: 10;
+}
+
+/* Chừa chỗ icon con mắt để label không bị che */
+.float-password .ant-input-affix-wrapper input {
+  padding-right: 40px !important;
+}

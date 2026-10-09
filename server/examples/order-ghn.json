@@ -1,0 +1,26 @@
+{
+  "client_order_code": "ORDER-DEMO-001",
+  "to_name": "Khách hàng mẫu",
+  "to_phone": "0900000001",
+  "to_address": "Địa chỉ người nhận mẫu",
+  "to_province_name": "Hà Nội",
+  "to_ward_name": "Phường của khách",
+  "is_new_to_address": true,
+  "payment_type_id": 1,
+  "service_type_id": 2,
+  "required_note": "KHONGCHOXEMHANG",
+  "cod_amount": 78000,
+  "insurance_value": 0,
+  "weight": 300,
+  "length": 15,
+  "width": 10,
+  "height": 8,
+  "items": [
+    {
+      "name": "Dressed In White 10ml",
+      "code": "BBW-DIW-010",
+      "quantity": 2,
+      "price": 39000
+    }
+  ]
+}
